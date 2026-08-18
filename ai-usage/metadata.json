@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "info@carlesjavierre.com",
+                "Name": "Carles Javierre"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "AI plan usage and limits, tracked altogether in one place",
+        "EnabledByDefault": true,
+        "Icon": "office-chart-bar-percent",
+        "Id": "com.carlesjavierre.aiusage",
+        "License": "GPL-3.0",
+        "Name": "AI Usage",
+        "Version": "1.0",
+        "Website": "https://github.com/carlesjavierre/kde-plugins"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

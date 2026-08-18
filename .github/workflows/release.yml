@@ -1,0 +1,32 @@
+name: release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Release each plasmoid at its own version
+        run: |
+          for dir in */; do
+            name="${dir%/}"
+            [ -f "$name/metadata.json" ] || continue
+            version=$(jq -r '.KPlugin.Version' "$name/metadata.json")
+            tag="$name-v$version"
+            if gh release view "$tag" >/dev/null 2>&1; then
+              echo "$tag already released, skipping"
+              continue
+            fi
+            (cd "$name" && zip -r "../$tag.plasmoid" .)
+            gh release create "$tag" "$tag.plasmoid" \
+              --title "$tag" --notes "$name $version"
+          done

@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "info@carlesjavierre.com",
+                "Name": "Carles Javierre"
+            }
+        ],
+        "Category": "Online Services",
+        "Description": "Shows remaining OpenRouter credits, refreshed on a timer",
+        "Icon": "view-financial-account",
+        "Id": "com.carlesjavierre.openroutercredits",
+        "License": "GPL-3.0-or-later",
+        "Name": "OpenRouter Credits",
+        "Version": "1.0",
+        "Website": "https://github.com/carlesjavierre/kde-plugins"
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-MainScript": "ui/main.qml"
+}
